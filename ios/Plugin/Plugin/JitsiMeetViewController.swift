@@ -15,6 +15,7 @@ public class JitsiMeetViewController: UIViewController {
     var jitsiMeetView: JitsiMeetView!
     var url: String = ""
     var roomName: String = ""
+    var displayName: String = ""
     var token: String? = nil
     var startWithAudioMuted: Bool = false
     var startWithVideoMuted: Bool = false
@@ -44,10 +45,13 @@ public class JitsiMeetViewController: UIViewController {
             print("currentLocale is China so we cannot use CallKit.")
             callkitEnabled = false
         }
+        
+        let userInfo = JitsiMeetUserInfo.init(displayName: self.displayName, andEmail: nil, andAvatar: nil)
 
         let options = JitsiMeetConferenceOptions.fromBuilder({ builder in
             builder.serverURL = URL(string: self.url)
             builder.room = self.roomName
+            builder.userInfo = userInfo
             builder.subject = " "
             builder.token = self.token
             builder.audioMuted = self.startWithAudioMuted
