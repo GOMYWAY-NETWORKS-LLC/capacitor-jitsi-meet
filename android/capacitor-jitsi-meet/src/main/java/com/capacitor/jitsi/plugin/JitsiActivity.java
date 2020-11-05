@@ -27,6 +27,10 @@ public class JitsiActivity extends JitsiMeetActivity {
         super.onCreate(savedInstanceState);
 
         view = new JitsiMeetView(this);
+        info = new JitsiMeetUserInfo();
+        String displayName = getIntent().getStringExtra("userInfo");
+        info.setDisplayName(displayName);
+        
         Log.d("Listener", "entering");
         view.setListener(new JitsiMeetViewListener() {
             private void on(String name, Map<String, Object> data) {
@@ -81,6 +85,9 @@ public class JitsiActivity extends JitsiMeetActivity {
         String token = getIntent().getStringExtra("token");
 
         Log.d("DEBUG", roomName);
+        
+        J
+            
 
         JitsiMeetConferenceOptions options = new JitsiMeetConferenceOptions.Builder()
                 .setServerURL(serverURL)
@@ -93,6 +100,7 @@ public class JitsiActivity extends JitsiMeetActivity {
                 .setFeatureFlag("invite.enabled", inviteEnabled)
                 //.setAudioOnly(false)
                 .setWelcomePageEnabled(false)
+                .setUserInfo(info)
                 .build();
         view.join(options);
         setContentView(view);
