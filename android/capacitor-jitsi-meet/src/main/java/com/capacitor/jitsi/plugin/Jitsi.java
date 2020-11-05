@@ -47,6 +47,10 @@ public class Jitsi extends Plugin {
             call.reject("Must provide an conference room name");
             return;
         }
+        if(displayName == null) {
+            call.reject("Must provide a display name");
+            return;
+        }        
         if(startWithAudioMuted == null) {
             startWithAudioMuted = false;
         }
