@@ -35,6 +35,7 @@ import 'capacitor-jitsi-meet';
 const { Jitsi } = Plugins;
 const result = await Jitsi.joinConference({
    roomName: 'room1', // room identifier for the conference
+   displayName: 'myname', // user display name for the conference
    url: 'https://meet.jit.si' // endpoint of the Jitsi Meet video bridge,
    token: string; // jwt authentication token
    channelLastN: string; // last N participants allowed to join
