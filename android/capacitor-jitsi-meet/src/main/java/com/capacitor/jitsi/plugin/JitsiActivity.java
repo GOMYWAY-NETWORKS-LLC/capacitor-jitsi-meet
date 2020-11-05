@@ -28,7 +28,7 @@ public class JitsiActivity extends JitsiMeetActivity {
 
         view = new JitsiMeetView(this);
         info = new JitsiMeetUserInfo();
-        String displayName = getIntent().getStringExtra("userInfo");
+        String displayName = getIntent().getStringExtra("displayName");
         info.setDisplayName(displayName);
         
         Log.d("Listener", "entering");
