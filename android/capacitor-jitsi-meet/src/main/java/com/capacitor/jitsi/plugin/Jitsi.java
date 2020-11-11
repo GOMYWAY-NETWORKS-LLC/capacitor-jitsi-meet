@@ -25,6 +25,7 @@ public class Jitsi extends Plugin {
         String url = call.getString("url");
         String roomName = call.getString("roomName");
         String displayName = call.getString("displayName");
+        String avatarURL = call.getString("avatarURL");
         String token = call.getString("token");
         Boolean startWithAudioMuted = call.getBoolean("startWithAudioMuted");
         Boolean startWithVideoMuted = call.getBoolean("startWithVideoMuted");
@@ -50,7 +51,7 @@ public class Jitsi extends Plugin {
         if(displayName == null) {
             call.reject("Must provide a display name");
             return;
-        }        
+        }
         if(startWithAudioMuted == null) {
             startWithAudioMuted = false;
         }
@@ -70,6 +71,7 @@ public class Jitsi extends Plugin {
         intent.putExtra("token", token);
         intent.putExtra("roomName", roomName);
         intent.putExtra("displayName", displayName);
+        intent.putExtra("avatarURL", avatarURL);
         intent.putExtra("startWithAudioMuted", startWithAudioMuted);
         intent.putExtra("startWithVideoMuted", startWithVideoMuted);
         intent.putExtra("chatEnabled", chatEnabled);
