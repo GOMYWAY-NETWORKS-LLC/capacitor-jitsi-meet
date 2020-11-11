@@ -27,11 +27,8 @@ public class JitsiActivity extends JitsiMeetActivity {
         super.onCreate(savedInstanceState);
 
         view = new JitsiMeetView(this);
-        info = new JitsiMeetUserInfo();
-        String displayName = getIntent().getStringExtra("displayName");
-        info.setDisplayName(displayName);
-        
-        Log.d("Listener", "entering");
+
+      Log.d("Listener", "entering");
         view.setListener(new JitsiMeetViewListener() {
             private void on(String name, Map<String, Object> data) {
                 UiThreadUtil.assertOnUiThread();
@@ -84,10 +81,17 @@ public class JitsiActivity extends JitsiMeetActivity {
         Boolean inviteEnabled = getIntent().getBooleanExtra("inviteEnabled", false);
         String token = getIntent().getStringExtra("token");
 
+        info = new JitsiMeetUserInfo();
+        String displayName = getIntent().getStringExtra("displayName");
+        String avatarURL = getIntent().getStringExtra("avatarURL");
+        info.setDisplayName(displayName);
+        try {
+          info.setAvatar(new URL(avatarURL));
+        } catch (MalformedURLException e) {
+          e.printStackTrace();
+        }
+
         Log.d("DEBUG", roomName);
-        
-        J
-            
 
         JitsiMeetConferenceOptions options = new JitsiMeetConferenceOptions.Builder()
                 .setServerURL(serverURL)
