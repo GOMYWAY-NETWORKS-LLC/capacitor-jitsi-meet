@@ -16,6 +16,7 @@ public class JitsiMeetViewController: UIViewController {
     var url: String = ""
     var roomName: String = ""
     var displayName: String = ""
+    var avatarURL: String = ""
     var token: String? = nil
     var startWithAudioMuted: Bool = false
     var startWithVideoMuted: Bool = false
@@ -46,7 +47,7 @@ public class JitsiMeetViewController: UIViewController {
             callkitEnabled = false
         }
         
-        let userInfo = JitsiMeetUserInfo.init(displayName: self.displayName, andEmail: nil, andAvatar: nil)
+        let userInfo = JitsiMeetUserInfo.init(displayName: self.displayName, andEmail: nil, andAvatar: URL(string: self.avatarURL))
 
         let options = JitsiMeetConferenceOptions.fromBuilder({ builder in
             builder.serverURL = URL(string: self.url)
