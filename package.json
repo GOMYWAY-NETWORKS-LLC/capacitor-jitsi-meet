@@ -1,6 +1,6 @@
 {
-  "name": "capacitor-jitsi-meet",
-  "version": "1.5.5",
+  "name": "@cotalker/capacitor-jitsi-meet",
+  "version": "21.0.4",
   "description": "This plugin is used to make video calls using Jitsi video platform (https://meet.jit.si) on iOS and Android using Capacitor.",
   "main": "dist/esm/index.js",
   "module": "dist/esm/index.js",
@@ -37,7 +37,7 @@
     "dist/",
     "ios/",
     "android/",
-    "CapacitorJitsiMeet.podspec"
+    "CotalkerCapacitorJitsiMeet.podspec"
   ],
   "keywords": [
     "capacitor",
@@ -49,16 +49,19 @@
       "src": "ios"
     },
     "android": {
-      "src": "android"
+      "src": "android/capacitor-jitsi-meet"
     }
   },
   "prettier": "@ionic/prettier-config",
   "swiftlint": "@ionic/swiftlint-config",
   "repository": {
     "type": "git",
-    "url": "https://github.com/calvinckho/capacitor-jitsi-meet"
+    "url": "https://github.com/Cotalker/capacitor-jitsi-meet"
   },
   "bugs": {
-    "url": "https://github.com/calvinckho/capacitor-jitsi-meet/issues"
+    "url": "https://github.com/Cotalker/capacitor-jitsi-meet/issues"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   }
 }
