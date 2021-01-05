@@ -1,6 +1,6 @@
 {
   "name": "@cotalker/capacitor-jitsi-meet",
-  "version": "21.0.4",
+  "version": "21.0.7",
   "description": "This plugin is used to make video calls using Jitsi video platform (https://meet.jit.si) on iOS and Android using Capacitor.",
   "main": "dist/esm/index.js",
   "module": "dist/esm/index.js",

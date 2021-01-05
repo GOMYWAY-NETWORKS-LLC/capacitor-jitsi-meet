@@ -10,7 +10,8 @@
     s.source_files = 'ios/Plugin/Plugin/**/*.{swift,h,m,c,cc,mm,cpp}'
     s.resource_bundles = {
         'Plugin' => [
-        'ios/Plugin/Plugin/*.storyboard'
+        'ios/Plugin/Plugin/*.storyboard',
+        'ios/Plugin/Plugin/JitsiMeet.storyboard'
         ]
     }
     s.ios.deployment_target  = '11.0'
